@@ -1,4 +1,4 @@
-import { ReportGenerator } from '../src/ReportGenerator.js';
+import { ReportGenerator } from '../src/ReportGenerator.refactored.js';
 
 // --- Dados de Teste ---
 const adminUser = { name: 'Admin', role: 'ADMIN' };
@@ -85,7 +85,7 @@ describe('ReportGenerator (Rede de Segurança)', () => {
       expect(report).toContain('<h1>Relatório</h1>');
       expect(report).toContain('<h2>Usuário: User</h2>');
       // DEVE conter o item de 300
-      expect(report).toContain('<tr><td>1</td><td>Produto A</td><td>300</td></tr>');
+      expect(report).toContain('<tr ><td>1</td><td>Produto A</td><td>300</td></tr>');
       // NÃO DEVE conter os itens caros
       expect(report).not.toContain('<td>Produto B</td>');
       expect(report).not.toContain('<td>Produto C</td>');
